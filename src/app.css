@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@plugin "@iconify/tailwind4" {
+  scale: 1.5;
+}
+
+@plugin "daisyui" {
+  themes: dark --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+
+  --color-primary: oklch(56% 0.25 278);
+  --color-secondary: oklch(40% 0.06 150);
+
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+}
+
+
+@utility btn-primary {
+  @apply bg-gradient-to-r from-primary to-[#8b5cf6];
+}
+
+body {
+  @apply min-h-screen;
+  background-color: #0f172a;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 30% 70%, rgba(16, 185, 129, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 70% 90%, rgba(99, 102, 241, 0.05) 0%, transparent 20%);
+  background-attachment: fixed;
+}
