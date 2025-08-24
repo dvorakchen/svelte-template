@@ -4,10 +4,19 @@ import { render } from 'vitest-browser-svelte';
 import Page from './+page.svelte';
 
 describe('/+page.svelte', () => {
-	it('should render h1', async () => {
+	it('should render 9 buttons', async () => {
 		render(Page);
 
-		const heading = page.getByRole('heading', { level: 1 });
-		await expect.element(heading).toBeInTheDocument();
+		const btn = page.getByRole('button').all();
+		expect(btn).toHaveLength(9);
+	});
+
+	it('should render primary button', async () => {
+		render(Page);
+
+		const btn = page.getByRole('button', {
+			name: 'Primary'
+		});
+		await expect.element(btn).toBeInTheDocument();
 	});
 });
