@@ -38,5 +38,6 @@ bun run test
 ```sh
 bun run build
 # output build/
-bun run build/index.js
+cd build
+bun run start
 ```
