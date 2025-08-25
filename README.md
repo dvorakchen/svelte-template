@@ -21,6 +21,11 @@ Used:
 
 # Usage
 
+```sh
+bun c https://github.com/dvorakchen/svelte-template <your-app-name>
+cd <your-app-name>
+```
+
 ## Dev
 
 ```sh
@@ -41,3 +46,4 @@ bun run build
 cd build
 bun run start
 ```
+
