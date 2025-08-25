@@ -24,13 +24,13 @@ Used:
 ## Dev
 
 ```sh
-bun dev --open
+bun --bun dev --open
 ```
 
 ## Teest
 
 ```sh
-bun run test
+bun --bun run test
 ```
 
 ## Build
