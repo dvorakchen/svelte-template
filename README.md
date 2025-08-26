@@ -41,9 +41,9 @@ bun --bun run test
 ## Build
 
 ```sh
-bun run build
+bun --bun run build
 # output build/
 cd build
-bun run start
+bun --bun run start
 ```
 
