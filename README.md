@@ -11,7 +11,10 @@ Used:
 - Browser testing: [Playwright](https://playwright.dev)
 - CSS framework: [tailwindcss](https://tailwindcss.com), [DaisyUI](https://daisyui.com)
 - sveltekit-adapter: [node](https://svelte.dev/docs/kit/adapter-node)
-- icon: [@iconify-json/mdi](https://icon-sets.iconify.design/mdi/)
+- Icon: [@iconify-json/mdi](https://icon-sets.iconify.design/mdi/)
+- Database: PostgreSQL
+- ORM: NONE!
+- DB migration: node-pg-migrate
 
 # Preview
 
@@ -32,7 +35,7 @@ cd <your-app-name>
 bun --bun dev --open
 ```
 
-## Teest
+## Test
 
 ```sh
 bun --bun run test
@@ -44,6 +47,26 @@ bun --bun run test
 bun --bun run build
 # output build/
 cd build
+# migrate database
+bunx node-pg-migrate up
+
 bun --bun run start
 ```
 
+## Database Migration
+
+**NOTI: PostgreSQL only!**
+
+the migration tool using node-pg-migrate, see the [document](https://salsita.github.io/node-pg-migrate/getting-started).
+
+setting the environment variable DATABASE_URL.
+
+```
+DATABASE_URL=postgres://postgres@localhost/database
+```
+
+and run
+
+```sh
+bun migrate:up
+```
