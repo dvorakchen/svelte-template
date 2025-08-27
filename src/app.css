@@ -19,8 +19,8 @@
 	prefersdark: false;
 	color-scheme: light;
 
-	--color-base-100: oklch(0.23 0.04 265);
-	--color-base-200: oklch(0.20 0.04 265);
+	--color-base-100: oklch(0.27 0.04 265);
+	--color-base-200: oklch(0.22 0.04 265);
 	--color-base-300: oklch(0.17 0.04 265);
 	--color-base-content: oklch(97.807% 0.029 256.847);
 	--color-primary: oklch(56% 0.25 278);
@@ -45,7 +45,7 @@
 	--size-selector: 0.25rem;
 	--size-field: 0.25rem;
 	--border: 1px;
-	--depth: 1;
+	--depth: 2;
 	--noise: 0;
 }
 
@@ -74,27 +74,27 @@
 }
 
 @utility border {
-	border-color: var(--color-gray-700);
+	border-color: var(--color-gray-400);
 }
 
 @utility border-t {
-	border-color: var(--color-gray-700);
+	border-color: var(--color-gray-400);
 }
 
 @utility border-r {
-	border-color: var(--color-gray-700);
+	border-color: var(--color-gray-400);
 }
 
 @utility border-b {
-	border-color: var(--color-gray-700);
+	border-color: var(--color-gray-400);
 }
 
 @utility border-l {
-	border-color: var(--color-gray-700);
+	border-color: var(--color-gray-400);
 }
 
-body {
-	@apply min-h-screen bg-fixed bg-base-100;
+.bg-body {
+	@apply min-h-screen bg-base-100 bg-fixed;
 	background-image:
 		radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 20%),
 		radial-gradient(circle at 90% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 20%),

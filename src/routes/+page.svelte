@@ -29,24 +29,33 @@
 
 <div class="p-1">
 	<div class="dropdown">
-		<div tabindex="0" role="button" class="btn m-1">Dropdown 1</div>
-		<ul tabindex="0" class="dropdown-content menu z-1 w-52 rounded-box bg-base-100 p-2 shadow-sm">
+		<div tabindex="0" role="button" class="btn m-1 bg-base-100">Dropdown 1</div>
+		<ul
+			tabindex="0"
+			class="dropdown-content menu z-1 w-52 rounded-box border bg-base-100 p-2 shadow-sm"
+		>
 			<li><a>Item 1</a></li>
 			<li><a>Item 2</a></li>
 		</ul>
 	</div>
 
 	<div class="dropdown">
-		<div tabindex="0" role="button" class="btn m-1">Dropdown 2</div>
-		<ul tabindex="0" class="dropdown-content menu z-1 w-52 rounded-box bg-base-200 p-2 shadow-sm">
+		<div tabindex="0" role="button" class="btn m-1 bg-base-200">Dropdown 2</div>
+		<ul
+			tabindex="0"
+			class="dropdown-content menu z-1 w-52 rounded-box border bg-base-200 p-2 shadow-sm"
+		>
 			<li><a>Item 1</a></li>
 			<li><a>Item 2</a></li>
 		</ul>
 	</div>
 
 	<div class="dropdown">
-		<div tabindex="0" role="button" class="btn m-1">Dropdown 3</div>
-		<ul tabindex="0" class="dropdown-content menu z-1 w-52 rounded-box bg-base-300 p-2 shadow-sm">
+		<div tabindex="0" role="button" class="btn m-1 bg-base-300">Dropdown 3</div>
+		<ul
+			tabindex="0"
+			class="dropdown-content menu z-1 w-52 rounded-box border bg-base-300 p-2 shadow-sm"
+		>
 			<li><a>Item 1</a></li>
 			<li><a>Item 2</a></li>
 		</ul>
