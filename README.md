@@ -14,9 +14,9 @@ Used:
 - CSS framework: [tailwindcss](https://tailwindcss.com), [DaisyUI](https://daisyui.com)
 - sveltekit-adapter: [node](https://svelte.dev/docs/kit/adapter-node)
 - Icon: [@iconify-json/mdi](https://icon-sets.iconify.design/mdi/)
-- Database: PostgreSQL
-- ORM: NONE! Writing the raw SQL by Bun.sql
-- DB migration: node-pg-migrate
+- Database: [PostgreSQL](https://www.postgresql.org/)
+- ORM: NONE! Writing the raw SQL by [Bun.sql](https://bun.sh/docs/api/sql)
+- DB migration: [node-pg-migrate](https://salsita.github.io/node-pg-migrate/)
 
 # Preview
 
