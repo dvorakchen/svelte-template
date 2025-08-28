@@ -9,8 +9,8 @@ Used:
 - Type checking: [TypeScript](https://www.typescriptlang.org/)
 - Formatter: [Prettier](https://prettier.io/)
 - Linter: [ESLint](https://eslint.org/)
-- Unit testing: [Bun Testing](https://bun.sh/docs/cli/test)
-- DOM testing: TODO
+- Unit testing: [Vitest](https://vitest.dev/)
+- Component testing: [Playwright](https://playwright.dev)
 - CSS framework: [tailwindcss](https://tailwindcss.com), [DaisyUI](https://daisyui.com)
 - sveltekit-adapter: [node](https://svelte.dev/docs/kit/adapter-node)
 - Icon: [@iconify-json/mdi](https://icon-sets.iconify.design/mdi/)
@@ -46,10 +46,14 @@ bun --bun dev --open
 
 ## Test
 
-run the `unit test`
+run the `unit test` and `component test`
+
+The `Component Test` should run in the client mode, the test file should named `<***>.svelte.{spec,test}.{ts,js}`.
+
+The `Unit Test` should run in the node mode, the test file should named `<***>.{spec,test}.{ts,js}`.
 
 ```sh
-bun test
+bun run test
 ```
 
 ## Build
