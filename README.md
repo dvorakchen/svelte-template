@@ -41,6 +41,10 @@ DATABASE_URL=postgres://username:password@localhost:5432/database
 ## Dev
 
 ```sh
+
+# set your database first
+bun migrate:up
+
 bun --bun dev --open
 ```
 
