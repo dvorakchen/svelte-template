@@ -1,7 +1,4 @@
-export const userStatus = {
-    disabled: 0,
-    enabled: 1,
-} as const;
+export { userStatus } from "./user";
 
 export const permissions = {
     baseAccess: 'base_access',

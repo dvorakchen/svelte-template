@@ -20,10 +20,7 @@ export async function up(pgm: MigrationBuilder): Promise<void> {
 
 	pgm.sql(`
     INSERT INTO users (username, email, password_hash, phone_number, balance, status, attributes) VALUES
-    ('admin', 'admin@example.com', 'password_hash', '+12345678901', 1000.00, 1, '{"theme": "dark", "language": "zh", "permissions": ["admin_access", "user_management"]}'),
-    ('john_doe', 'john@example.com', 'password_hash', '+12345678902', 500.50, 1, '{"theme": "light", "language": "en", "permissions": ["basic_access"]}'),
-    ('jane_smith', 'jane@example.com', 'password_hash', '+12345678903', 250.75, 1, '{"theme": "system", "language": "es", "permissions": ["basic_access", "premium_features"]}'),
-    ('test_user', 'test@example.com', 'password_hash', '+12345678904', 100.00, 0, '{"theme": "dark", "language": "en", "permissions": ["basic_access"]}')
+    ('admin', 'admin@example.com', '', '18812011000', 1000.00, 1, '{"theme": "dark", "language": "zh", "permissions": ["admin_access"]}')
     ON CONFLICT (email) DO NOTHING;
   `);
 	// 创建 roles 表
@@ -36,10 +33,9 @@ export async function up(pgm: MigrationBuilder): Promise<void> {
 
 	pgm.sql(`
     INSERT INTO roles (name, description, attributes) VALUES
-    ('admin', '系统管理员', '{"can_manage_users", "can_manage_roles", "full_system_access"}'),
-    ('user', '普通用户', '{"can_basic_operations", "profile_access"}'),
-    ('vip', 'VIP用户', '{"can_premium_operations", "higher_limits", "priority_support"}'),
-    ('moderator', '内容审核员', '{"content_moderation", "user_reports"}')
+    ('admin', '系统管理员', '{"admin_access"}'),
+    ('user', '普通用户', '{"base_access"}'),
+    ('vip', 'VIP用户', '{"premium_features", "priority_support"}')
     ON CONFLICT (name) DO NOTHING;
   `);
 
@@ -77,40 +73,12 @@ export async function up(pgm: MigrationBuilder): Promise<void> {
     FROM users u, roles r 
     WHERE u.username = 'admin' AND r.name = 'admin'
     ON CONFLICT (user_id, role_id) DO NOTHING;
-
-    -- john_doe 拥有 user 和 vip 角色
-    INSERT INTO user_roles (user_id, role_id)
-    SELECT u.id, r.id 
-    FROM users u, roles r 
-    WHERE u.username = 'john_doe' AND r.name IN ('user', 'vip')
-    ON CONFLICT (user_id, role_id) DO NOTHING;
-
-    -- jane_smith 拥有 user 角色
-    INSERT INTO user_roles (user_id, role_id)
-    SELECT u.id, r.id 
-    FROM users u, roles r 
-    WHERE u.username = 'jane_smith' AND r.name = 'user'
-    ON CONFLICT (user_id, role_id) DO NOTHING;
-
-    -- test_user 拥有 user 角色
-    INSERT INTO user_roles (user_id, role_id)
-    SELECT u.id, r.id 
-    FROM users u, roles r 
-    WHERE u.username = 'test_user' AND r.name = 'user'
-    ON CONFLICT (user_id, role_id) DO NOTHING;
-
-    -- 为管理员也添加 user 角色（如果需要）
-    INSERT INTO user_roles (user_id, role_id)
-    SELECT u.id, r.id 
-    FROM users u, roles r 
-    WHERE u.username = 'admin' AND r.name = 'user'
-    ON CONFLICT (user_id, role_id) DO NOTHING;
   `);
 
 	// 创建 sms_captcha 表
 	pgm.createTable('sms_captcha', {
 		id: { type: 'serial', primaryKey: true },
-		phone_number: { type: 'varchar(50)', notNull: true, unique: true },
+		phone_number: { type: 'varchar(50)', notNull: true },
 		code: { type: 'varchar(10)', notNull: true },
 		is_used: { type: 'boolean', notNull: true, default: false },
 		expires_at: {

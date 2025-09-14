@@ -1,5 +1,8 @@
 <script lang="ts">
+	import MarginNavTop from '@/lib/components/margin_nav_top.svelte';
 </script>
+
+<MarginNavTop />
 
 <p>
 	<button class="btn">Default</button>
@@ -17,7 +20,7 @@
 </p>
 <p>
 	<button class="btn btn-outline">Default</button>
-	<button class="btn btn-primary btn-outline">Default</button>
+	<button class="btn btn-outline btn-primary">Default</button>
 	<button class="btn btn-outline btn-secondary">Secondary</button>
 	<button class="btn btn-outline btn-accent">Accent</button>
 	<button class="btn btn-outline btn-warning">Warning</button>

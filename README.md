@@ -36,6 +36,7 @@ Create the `.env` file at root of project and set:
 ```
 # database url of PostgreSQL
 DATABASE_URL=postgres://username:password@localhost:5432/database
+SERVER_PRIVATE_KEY=<private key for JWT>
 ```
 
 ## Dev
@@ -70,7 +71,7 @@ cd build
 # just set the .env file at the root of project
 bunx node-pg-migrate up
 
-bun --bun run start
+bun ./build/index.js
 ```
 
 ## Database Migration
