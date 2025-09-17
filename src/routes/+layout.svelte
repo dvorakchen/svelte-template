@@ -41,7 +41,7 @@
 	</div>
 </div>
 
-<div class="fixed top-0 z-10 navbar bg-transparent space-x-4">
+<nav class="fixed top-0 z-10 navbar space-x-4 bg-transparent">
 	<div class="flex-1">
 		<a class="btn text-xl btn-link" href="/">
 			<span class="h-7 w-7 overflow-clip rounded">
@@ -80,9 +80,11 @@
 			<Login bind:this={loginBox} />
 		{/if}
 	</div>
-</div>
+</nav>
 
-{@render children?.()}
+<main>
+	{@render children?.()}
+</main>
 
 <footer class="mt-24 footer items-center bg-neutral p-4 text-neutral-content sm:footer-horizontal">
 	<aside class="grid-flow-col items-center">
