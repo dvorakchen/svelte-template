@@ -1,11 +1,11 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import { toastMan } from '@/universal/toast.svelte';
-	import Login from '@/lib/components/login.svelte';
-	import { userMan } from '@/universal/user.svelte';
-	import Avatar from '@/lib/components/avatar.svelte';
-	import ThemeController from '@/lib/components/theme_controller.svelte';
+	import { toastMan } from '$lib/client/universal/toast.svelte';
+	import Login from '$lib/components/login.svelte';
+	import { userMan } from '$lib/client/universal/user.svelte';
+	import Avatar from '$lib/components/avatar.svelte';
+	import ThemeController from '$lib/components/theme_controller.svelte';
 
 	let { children } = $props();
 

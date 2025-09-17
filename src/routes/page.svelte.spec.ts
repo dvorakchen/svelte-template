@@ -4,9 +4,9 @@ import { render } from 'vitest-browser-svelte';
 import Page from './+page.svelte';
 
 describe('/+page.svelte', () => {
-    it('should render buttons', async () => {
-        render(Page);
-        const btns = page.getByRole('button').all();
-        expect(btns).toHaveLength(21);
-    })
+	it('should render buttons', async () => {
+		render(Page);
+		const btns = page.getByRole('button').all();
+		expect(btns).toHaveLength(21);
+	});
 });

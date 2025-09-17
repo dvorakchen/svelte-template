@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { http } from '@/net/http';
-	import { toastMan } from '@/universal/toast.svelte';
-	import { userMan } from '@/universal/user.svelte';
+	import { http } from '$lib/client/net/http';
+	import { toastMan } from '$lib/client/universal/toast.svelte';
+	import { userMan } from '$lib/client/universal/user.svelte';
 	import { getByCurrentQueryString } from '$lib/utils';
 	import { goto } from '$app/navigation';
 

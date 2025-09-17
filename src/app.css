@@ -10,7 +10,9 @@
 }
 
 @plugin "daisyui" {
-	themes: nord --default, dark --prefersdark;
+	themes:
+		nord --default,
+		dark --prefersdark;
 }
 
 @plugin "daisyui/theme" {

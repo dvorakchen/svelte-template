@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MarginNavTop from '@/lib/components/margin_nav_top.svelte';
+	import MarginNavTop from '$lib/components/margin_nav_top.svelte';
 </script>
 
 <MarginNavTop />
