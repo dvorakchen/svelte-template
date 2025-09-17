@@ -1,4 +1,4 @@
-import { SERVER_PRIVATE_KEY } from '$env/static/private';
+import { JWT_KEY } from '$env/static/private';
 import jwt from 'jsonwebtoken';
 import type { PartOfUser } from '../share/user';
 
@@ -9,7 +9,7 @@ export function signJWT(user: PartOfUser): string {
 			username: user.username,
 			phoneNumber: user.phone_number
 		},
-		SERVER_PRIVATE_KEY,
+		JWT_KEY,
 		{ expiresIn: '1Week' }
 	);
 
